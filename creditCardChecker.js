@@ -24,6 +24,13 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 
+/*
+ * The function `validateCred` checks if a given array of numbers is a valid credit card number.
+ * @param _array - The `_array` parameter is an array of numbers representing a credit card number.
+ * Each element in the array represents a digit of the credit card number.
+ * @returns a boolean value. It returns true if the sum of the results modulo 10 is equal to 0,
+ * indicating that the credit card number is valid. It returns false otherwise.
+ */
 function validateCred(_array) {
     let sumOfResults = 0; //modulo this by 10 to get a 0 at the end
     for (let i = _array.length -1; i >= 0; i -= 2) {
@@ -41,6 +48,13 @@ function validateCred(_array) {
     //console.log(sumOfResults %10 === 0);
     return sumOfResults %10 === 0;
 };
+
+/**
+ * The function `findInvalidCards` takes in a nested array of credit card numbers and returns an array
+ * of invalid card numbers.
+ * @param _nestedArray - The `_nestedArray` parameter is an array of arrays. Each inner array
+ * represents a credit card number.
+ */
 function findInvalidCards(_nestedArray) {
     let returnArrayOfInvalidCards = [];
     for (let i = 0; i < _nestedArray.length; i++) {
@@ -50,6 +64,15 @@ function findInvalidCards(_nestedArray) {
     };
 };
 
+/*
+ * The function `idInvalidCardCompanies` takes in an array of credit card numbers and returns an array
+ * of the companies that issued invalid cards.
+ * @param _nestedArray - The `_nestedArray` parameter is an array of credit card numbers. Each credit
+ * card number is represented as a string, where each digit of the credit card number is separated by a
+ * comma. For example, ["4,5,6,7,8,9", "3,2,1
+ * @returns The function `idInvalidCardCompanies` returns an array containing the names of the credit
+ * card companies that have invalid cards in the input nested array `_nestedArray`.
+ */
 function idInvalidCardCompanies(_nestedArray) {
     let returnArrayOfInvalidCards = [];
     let amexFlag = false;
